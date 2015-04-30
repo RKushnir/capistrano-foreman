@@ -71,6 +71,7 @@ Capistrano::DSL.stages.each do |stage|
 end
 
 before 'deploy:publishing', 'foreman:export'
+after  'deploy:publishing', 'foreman:restart'
 
 namespace :load do
   task :defaults do
